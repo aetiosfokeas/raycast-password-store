@@ -27,28 +27,29 @@ export const getPasswordIcon = (text: string) => {
 }
 
 export const getOptionIcon = (text: string) => {
-  switch (text) {
-    case 'Password':
-      return Icon.Key;
-    case 'OTP':
-      return Icon.Hourglass;
-    case 'email':
-      return Icon.Envelope;
-    case 'user':
-      return Icon.Person;
-    case 'url':
-      return Icon.Link;
-    case 'Number':
-      return Icon.CreditCard;
-    case 'Cardholder Name':
-      return Icon.Person;
-    case 'Expiration':
-      return Icon.Calendar;
-    case 'Security Code':
-      return Icon.Code;
-    case 'Brand':
-      return Icon.CreditCard;
-    default:
-      return Icon.Circle;
+  if (text === 'Password') {
+    return Icon.Key;
+  } else if (text === 'OTP') {
+    return Icon.Hourglass;
+  } else if (text === 'email') {
+    return Icon.Envelope;
+  } else if (text === 'username') {
+    return Icon.Person;
+  } else if (text === 'user') {
+    return Icon.Person;
+  } else if (text === 'url') {
+    return Icon.Link;
+  } else if (text === 'Number') {
+    return Icon.CreditCard;
+  } else if (text === 'Cardholder Name') {
+    return Icon.Person;
+  } else if (text === 'Expiration') {
+    return Icon.Calendar;
+  } else if (text === 'Security Code') {
+    return Icon.Code;
+  } else if (text === 'Brand') {
+    return Icon.CreditCard;
+  } else {
+    return Icon.Circle;
   }
 }

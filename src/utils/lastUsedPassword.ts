@@ -9,10 +9,10 @@ export const getLastUsedPassword = async () => {
 
   // If the file exists, get all the info from the file
   if (lastUsedPasswordFile) {
-    const lastUsedPasswordOj = lastUsedPasswordFile.split('\n');
-    const lastUsedPassword = lastUsedPasswordOj[0];
-    const lastUsedPasswordOption = lastUsedPasswordOj[1];
-    const lastUsedPasswordTime = lastUsedPasswordOj[2];
+    const lastUsedPasswordObj = lastUsedPasswordFile.split('\n');
+    const lastUsedPassword = lastUsedPasswordObj[0];
+    const lastUsedPasswordOption = lastUsedPasswordObj[1];
+    const lastUsedPasswordTime = lastUsedPasswordObj[2];
     const currentTimestamp = new Date().getTime();
 
     // Calculate the difference in seconds between the last time it was used, and now
