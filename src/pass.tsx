@@ -9,6 +9,10 @@ import { getLastUsedPassword, updateLastUsedPassword } from "./utils/lastUsedPas
 
 const execPromise = promisify(exec);
 const globPromise = promisify(glob);
+
+const PASS_CMD = "pass";
+const OTP_CMD = "pass otp";
+const SHELL_PREFIX = "export PATH=$PATH:/opt/homebrew/bin &&"; // Needed for the 'pass' command to work
 const PASSWORDS_PATH = `${os.homedir()}/.password-store/`;
 
 interface Password {
@@ -81,7 +85,7 @@ function PasswordOptions(props: { selectedPassword: string; showOtpFirst: boolea
   const { isLoading, data } = usePromise(async () => {
     // Get the decrypted contents of the file
     // Run command to get decrypted contents of the file
-    const stdout = await runCmd(`pass ${selectedPassword}`);
+    const stdout = await runCmd(`${PASS_CMD} ${selectedPassword}`);
 
     // Split the output into lines
     const passwordOptions = stdout.split("\n");
@@ -103,7 +107,7 @@ function PasswordOptions(props: { selectedPassword: string; showOtpFirst: boolea
           options.push({ title: elements[0], value: elements[1] });
         } else if (option.startsWith("otpauth://")) {
           // Check if the line is an OTP entry
-          const otpValue = await runCmd(`pass otp ${selectedPassword}`);
+          const otpValue = await runCmd(`${OTP_CMD} ${selectedPassword}`);
 
           // Push OTP option as the first or second option, depending on the 'showOtpFirst' variable
           options.splice(showOtpFirst ? 0 : 1, 0, { title: "OTP", value: otpValue });
@@ -178,7 +182,7 @@ async function performAction(
 async function runCmd(cmd: string): Promise<string> {
   try {
     // Execute the command and wait for the result
-    const { stdout } = await execPromise(`export PATH=$PATH:/opt/homebrew/bin && ${cmd}`, { shell: "/bin/zsh" });
+    const { stdout } = await execPromise(`${SHELL_PREFIX} ${cmd}`, { shell: "/bin/zsh" });
 
     // Return the standard output
     return stdout;
