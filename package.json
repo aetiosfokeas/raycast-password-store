@@ -2,7 +2,7 @@
   "$schema": "https://www.raycast.com/schemas/extension.json",
   "name": "password-store",
   "title": "Password Store",
-  "description": "",
+  "description": "A Raycast Extension for managing passwordstore.org passwords",
   "icon": "icon.png",
   "author": "afok",
   "license": "MIT",

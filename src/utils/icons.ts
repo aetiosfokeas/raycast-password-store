@@ -1,55 +1,55 @@
 import { Icon } from "@raycast/api";
 
-export const getPasswordIcon = (text: string) => {
-  if (text.startsWith('Cards/')) {
-    return Icon.CreditCard;
-  } else if (text.startsWith('Dev/')) {
-    return Icon.Terminal;
-  } else if (text.startsWith('Mails/')) {
-    return Icon.Envelope;
-  } else if (text.startsWith('Finance/')) {
-    return Icon.Coins;
-  } else if (text.startsWith('Games/')) {
-    return Icon.GameController;
-  } else if (text.startsWith('Social/')) {
-    return Icon.TwoPeople;
-  } else if (text.startsWith('Personal/')) {
-    return Icon.Person;
-  } else if (text.startsWith('SSH/')) {
-    return Icon.Terminal;
-  } else if (text.startsWith('Shops/')) {
-    return Icon.Gift;
-  } else if (text.startsWith('Security/')) {
-    return Icon.Fingerprint;
-  } else {
-    return Icon.Lock;
-  }
+/**
+ * Returns the appropriate icon based on the provided text prefix.
+ *
+ * @param {string} text - The text used to determine the icon.
+ * @returns {Icon} The corresponding icon for the text prefix, or a default lock icon if no match is found.
+ */
+export const getPasswordIcon = (text: string): Icon => {
+  // Mapping of text prefixes to their corresponding icons
+  const iconMap: { [key: string]: Icon } = {
+    'Cards/': Icon.CreditCard,
+    'Dev/': Icon.Terminal,
+    'Mails/': Icon.Envelope,
+    'Finance/': Icon.Coins,
+    'Games/': Icon.GameController,
+    'Social/': Icon.TwoPeople,
+    'Personal/': Icon.Person,
+    'SSH/': Icon.Terminal,
+    'Shops/': Icon.Gift,
+    'Security/': Icon.Fingerprint,
+  };
+
+  // Find the first key in iconMap that matches the start of the text
+  const key = Object.keys(iconMap).find(k => text.startsWith(k));
+
+  // Return the corresponding icon if a match is found, otherwise return the default lock icon
+  return key ? iconMap[key] : Icon.Lock;
 }
 
-export const getOptionIcon = (text: string) => {
-  if (text === 'Password') {
-    return Icon.Key;
-  } else if (text === 'OTP') {
-    return Icon.Hourglass;
-  } else if (text === 'email') {
-    return Icon.Envelope;
-  } else if (text === 'username') {
-    return Icon.Person;
-  } else if (text === 'user') {
-    return Icon.Person;
-  } else if (text === 'url') {
-    return Icon.Link;
-  } else if (text === 'Number') {
-    return Icon.CreditCard;
-  } else if (text === 'Cardholder Name') {
-    return Icon.Person;
-  } else if (text === 'Expiration') {
-    return Icon.Calendar;
-  } else if (text === 'Security Code') {
-    return Icon.Code;
-  } else if (text === 'Brand') {
-    return Icon.CreditCard;
-  } else {
-    return Icon.Circle;
-  }
+/**
+ * Returns the appropriate icon based on the provided option text.
+ *
+ * @param {string} text - The text used to determine the icon.
+ * @returns {Icon} The corresponding icon for the text option, or a default minus icon if no match is found.
+ */
+export const getOptionIcon = (text: string): Icon => {
+  // Mapping of text options to their corresponding icons
+  const iconMap: { [key: string]: Icon } = {
+    'Password': Icon.Key,
+    'OTP': Icon.Hourglass,
+    'email': Icon.Envelope,
+    'username': Icon.Person,
+    'user': Icon.Person,
+    'url': Icon.Link,
+    'Number': Icon.CreditCard,
+    'Brand': Icon.CreditCard,
+    'Cardholder Name': Icon.Person,
+    'Expiration': Icon.Calendar,
+    'Security Code': Icon.Code,
+  };
+
+  // Return the corresponding icon if a match is found, otherwise return the default minus icon
+  return iconMap[text] || Icon.Minus;
 }
