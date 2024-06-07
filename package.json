@@ -3,7 +3,7 @@
   "name": "password-store",
   "title": "Password Store",
   "description": "A Raycast Extension for managing passwordstore.org passwords",
-  "icon": "icon.png",
+  "icon": "password-store.png",
   "author": "afok",
   "license": "MIT",
   "commands": [
