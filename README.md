@@ -14,4 +14,4 @@ By default, this extension looks in the `~/.password-store` directory for any fi
 
 ### Select an action
 The default behaviour when you select an option is to 'paste' the value. The secondary option (Ctrl+Enter) is to copy the value to your clipboard.
-![Password Actions](./assets/pass-details.png)
+![Password Actions](./assets/pass-actions.png)
