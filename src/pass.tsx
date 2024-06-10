@@ -8,11 +8,10 @@ import { getOptionIcon, getPasswordIcon } from "./utils/icons";
 import { getLastUsedPassword, updateLastUsedPassword } from "./utils/lastUsedPassword";
 
 const execPromise = promisify(exec);
-const globPromise = promisify(glob);
 
 const PASS_CMD = "pass";
 const OTP_CMD = "pass otp";
-const SHELL_PREFIX = "export PATH=$PATH:/opt/homebrew/bin &&"; // Needed for the 'pass' command to work
+const SHELL_PREFIX = "export PATH=$PATH:/opt/homebrew/bin &&"; // Needed for the 'pass' command to work on M1 Mac
 const PASSWORDS_PATH = `${os.homedir()}/.password-store/`;
 
 interface Password {
@@ -41,10 +40,10 @@ export default function Command(): JSX.Element {
       : [];
 
     // Get all password files
-    const files = await globPromise(`${PASSWORDS_PATH}**/*.gpg`);
+    const files = await glob(`${PASSWORDS_PATH}**/*.gpg`);
 
     // Add each password to the list, excluding the last used password
-    files.forEach((file) => {
+    files.sort().forEach((file) => {
       const password = file.replace(PASSWORDS_PATH, "").replace(".gpg", "");
       if (password !== lastUsedPassword.password) passwords.push({ value: password });
     });
@@ -156,7 +155,7 @@ function PasswordOptions(props: { selectedPassword: string; showOtpFirst: boolea
 async function performAction(
   selectedPassword: string,
   option: { title: string; value: string },
-  action: "copy" | "paste"
+  action: "copy" | "paste",
 ): Promise<void> {
   try {
     // Update the last used password file
