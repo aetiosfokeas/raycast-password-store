@@ -5,7 +5,7 @@ Raycast Extension for copying/pasting credentials from your password store (aka 
 ### List View
 The first view of this extension show all the password files (all the files ending in `.gpg` located in the `~/.password-store` directory)
 ![List Passwords](./assets/pass-list.png)
-If a password has already been used within the last **2 minutes** it will be displayed as the first option (regardless of the alphabetical order) to make it easier to access (ex. You just used the email for your Steam account. Most probably you will also need your password right after that).
+If a password has already been used within the last **2 minutes** it will be displayed as the first option (regardless of the alphabetical order) to make it easier to access (ex. You just used the email for your Steam account, most probably you will also need your password right after that).
 ![List Passwords](./assets/pass-list-order.png)
 
 ---
