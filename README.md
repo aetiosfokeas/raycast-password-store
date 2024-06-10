@@ -2,6 +2,10 @@
 
 Raycast Extension for copying/pasting credentials from your password store (aka [pass](https://passwordstore.org))
 
+## Requirements
+* [pass](https://passwordstore.org) cli tool installed and configured
+* [pass-otp](https://github.com/tadfisher/pass-otp) extension is installed (optional)
+
 ### List View
 The first view of this extension show all the password files (all the files ending in `.gpg` located in the `~/.password-store` directory)
 ![List Passwords](./assets/pass-list.png)
