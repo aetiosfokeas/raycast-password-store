@@ -4,7 +4,12 @@ Raycast Extension for copying/pasting credentials from your password store (aka 
 
 ## Requirements
 * [pass](https://passwordstore.org) cli tool installed and configured
-* [pass-otp](https://github.com/tadfisher/pass-otp) extension is installed (optional)
+* [pass-otp](https://github.com/tadfisher/pass-otp) extension installed (optional)
+
+## Table of content
+- [List View](#list-view)
+- [Password Content View](#password-content-view)
+- [Available Actions](#available-actions)
 
 ### List View
 The first view of this extension show all the password files (all the files ending in `.gpg` located in the `~/.password-store` directory)
@@ -38,6 +43,6 @@ If the last used options was the 'Password', the OTP options will be added as th
 
 ---
 
-### Select an action
+### Available Actions
 The default behaviour when you select an option (by pressing the `Enter` key) is to 'paste' the value. The secondary option (using the `Cmd+Enter`) is to copy the value to your clipboard.
 ![Password Actions](./assets/pass-actions.png)
