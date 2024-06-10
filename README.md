@@ -20,8 +20,8 @@ If a password has already been used within the last **2 minutes** it will be dis
 ![List Passwords](./assets/pass-list-order.png)
 
 ## Password Content View
-After a password has been selected, the details view is show.
-The details view will contain the following options:
+After a password has been selected, the details view is show.  
+The details view will contain the following options:  
   * Password: The first line of the decrypted file
   * OTP: If the file contains an OTP URI (line starting with `otpauth://`) and the [pass-otp](https://github.com/tadfisher/pass-otp) extension is installed.
   * For the remaining lines, if they follow the `Key: Value` format, a new entry will be added to the options using the `Key` as a title, and the `Value` as the value.
