@@ -5,7 +5,7 @@ Raycast Extension for copying/pasting credentials from your password store (aka 
 ### List View
 The first view of this extension show all the password files (all the files ending in `.gpg` located in the `~/.password-store` directory)
 ![List Passwords](./assets/pass-list.png)
-If a password has already been used within the last **2 minutes** it will be displayed as the first option (regardless of the alphabetical order) to make it easier to access (ex. You just used the email for your Github account. Most probably you will also need your password right after that).
+If a password has already been used within the last **2 minutes** it will be displayed as the first option (regardless of the alphabetical order) to make it easier to access (ex. You just used the email for your Steam account. Most probably you will also need your password right after that).
 ![List Passwords](./assets/pass-list-order.png)
 
 ---
@@ -28,7 +28,7 @@ otpauth://totp/totp-secret?secret=SECRET-OTP-CODE
 ```
 ![Password Details](./assets/pass-details.png)
 
-If the last used options was the 'Password', the OTP options will be added as the **first option** to make it easier to access (ex. You just used the password for your Github account. If an OTP field exists, most probably you will need your OTP right after that).
+If the last used options was the 'Password', the OTP options will be added as the **first option** to make it easier to access (ex. You just used the password for your Steam account. If an OTP field exists, most probably you will need your OTP right after that).
 ![List Passwords](./assets/pass-details-order.png)
 
 ---
