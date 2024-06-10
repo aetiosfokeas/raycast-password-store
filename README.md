@@ -23,7 +23,7 @@ this-is-a-password
 
 url: https://example.com
 email: user@email.com
-username: user
+user: user
 otpauth://totp/totp-secret?secret=SECRET-OTP-CODE
 Recovery codes: 000-000 000-000 000-000 000-000
 ```
