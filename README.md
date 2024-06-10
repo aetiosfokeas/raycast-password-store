@@ -25,6 +25,7 @@ url: https://example.com
 email: user@email.com
 username: user
 otpauth://totp/totp-secret?secret=SECRET-OTP-CODE
+Recovery codes: 000-000 000-000 000-000 000-000
 ```
 ![Password Details](./assets/pass-details.png)
 
