@@ -15,9 +15,9 @@ This extension allows you to quickly copy/paste passwords using Raycast, without
 
 ## List View
 The first view of this extension show all the password files (all the files ending in `.gpg` located in the `~/.password-store` directory)
-![List Passwords](./media/pass-list.png)
+![List Passwords](./media/01-pass-list.png)
 If a password has already been used within the last **2 minutes** it will be displayed as the first option (regardless of the alphabetical order) to make it easier to access (ex. You just used the email for your Steam account, most probably you will also need your password right after that).
-![List Passwords](./media/pass-list-order.png)
+![List Passwords](./media/02-pass-list-order.png)
 
 ## Password Content View
 After a password has been selected, the details view is show.  
@@ -36,11 +36,11 @@ user: user
 otpauth://totp/totp-secret?secret=SECRET-OTP-CODE
 Recovery codes: 000-000 000-000 000-000 000-000
 ```
-![Password Details](./media/pass-details.png)
+![Password Details](./media/03-pass-details.png)
 
 If the last used options was the 'Password', the OTP options will be added as the **first option** to make it easier to access (ex. You just used the password for your Steam account. If an OTP field exists, most probably you will need your OTP right after that).
-![List Passwords](./media/pass-details-order.png)
+![List Passwords](./media/04-pass-details-order.png)
 
 ## Available Actions
 The default behaviour when you select an option (by pressing the `Enter` key) is to 'paste' the value. The secondary option (using the `Cmd+Enter`) is to copy the value to your clipboard.
-![Password Actions](./media/pass-actions.png)
+![Password Actions](./media/05-pass-actions.png)
