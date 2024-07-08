@@ -8,6 +8,8 @@
 /* eslint-disable @typescript-eslint/ban-types */
 
 type ExtensionPreferences = {
+  /** Password Store Location - The full path to your password store */
+  "PASSWORDS_PATH": string,
   /** GPG decryption password - Your password for your GPG key */
   "GPG_KEY": string
 }
